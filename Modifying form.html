@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form</title>
+    </head>
+    <body>
+        <h2>Form fill:</h2>
+        <form id="myForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name"><br><br>
+            <label for="age">Age:</label>
+            <input type="number" id="age" placeholder="Enter your age"><br><br>
+            <button type="button" id="addInput">Add Email</button>
+            <button type="submit">Submit</button>
+        </form>
+        <script>
+            function addInput() {
+                let form = document.getElementById("myForm");
+                let newInput = document.createElement("input");
+                newInput.setAttribute("type", "email");
+                newInput.setAttribute("placeholder", "Enter your email");
+                form.insertBefore(newInput, form.lastElementChild);
+            }
+            document.getElementById("addInput").addEventListener("click", addInput);
+        </script>
+    </body>
+</html>
